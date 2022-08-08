@@ -1,0 +1,193 @@
+<style>
+    body {
+        background-color: #242528;
+        color: rgba(255, 255, 255, 0.3);
+    }
+
+    content {
+        padding: 0;
+    }
+
+    header {
+        background-color: rgba(0, 0, 0, 0.2);
+    }
+
+    header logo {
+        filter: invert(0.1) hue-rotate(-135deg);
+    }
+
+    header ul li anchor.active {
+        border-color: #e599ff;
+    }
+
+    drawer {
+        background-color: #242528;
+    }
+
+    drawer ul li anchor.active {
+        background-color: rgba(0, 0, 0, 0.3);
+    }
+
+    prototype {
+        display: flex;
+        padding: 10px;
+        margin: 10px 0px;
+        width: 90vw;
+    }
+
+    separator {
+        display: block;
+        width: 40vw;
+        height: 1px;
+        margin: 0 auto;
+        background-color: rgba(0, 0, 0, 0.2);
+    }
+
+    info {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        margin: 5px 10px 0px 0px;
+    }
+
+    info thumb img {
+        width: 60px;
+        height: 60px;
+        border-radius: 5px;
+        box-shadow: 0px 1px 1px 0.2px rgba(0, 0, 0, 0.3);
+    }
+
+    description {}
+
+    description h3 {
+        font-family: 'Lobster';
+        color: rgba(255, 255, 255, 0.5)
+    }
+
+    description text {
+        display: block;
+    }
+
+    description tag {
+        background-color: rgba(0, 0, 0, 0.1);
+        padding: 3px 5px;
+        border-radius: 0px;
+        font-size: 12px;
+    }
+
+    description a,
+    description b {
+        font-weight: bold;
+        color: rgba(255, 255, 255, 0.5);
+    }
+
+    description links {
+        display: flex;
+        align-items: center;
+        justify-content: flex-start;
+        margin: 5px 0px;
+    }
+
+    description links a,
+    description links anchor {
+        flex: 1;
+        min-width: 90px;
+        max-width: 90px;
+        cursor: pointer;
+        text-decoration: none;
+        margin-right: 10px;
+        padding: 0px;
+        border-radius: 30px;
+        text-align: center;
+        color: var(--secondary);
+        background-color: rgba(0, 0, 0, 0.6);
+        box-shadow: 0px 1px 2px 0px rgba(0, 0, 0, 0.3);
+    }
+
+    description links a:hover,
+    description links anchor:hover,
+    description links modal:hover {
+        background-color: var(--secondary);
+        color: var(--primary-variant);
+    }
+</style>
+
+
+<script>
+
+    sessionStorage.clear()
+
+    // fetch new prototypes
+    if (!sessionStorage.getItem('prototipos')) {
+
+        // add prototypes to the list
+        fetch('./prototipos.json').then((response) => {
+
+            response.json().then((data) => {
+
+                sessionStorage.setItem('prototipos', JSON.stringify(data))
+                sessionStorage.setItem('timestamp', new Date())
+
+                listPrototypes(data)
+
+            })
+
+        })
+
+    } else {
+
+        // cached prototypes file
+        let data = JSON.parse(sessionStorage.getItem('prototipos'))
+
+        let lastDate = new Date(sessionStorage.getItem('timestamp'))
+        let currentDate = new Date()
+        let diffDate = lastDate.getMinutes() - currentDate.getMinutes()
+
+        if (Math.abs(diffDate) > 3) {
+            sessionStorage.clear()
+        }
+
+        listPrototypes(data)
+
+    }
+
+    function listPrototypes(data) {
+
+        data.forEach((prototype, i) => {
+
+            const prototypeRootFolder = 'https://brunoandradebr.github.io/EmagJS/Demos'
+
+            let component = `
+                <prototype>
+                    <info>
+                        <thumb>
+                            <img src="${prototypeRootFolder}/${prototype.folder}thumb.png" />
+                        </thumb>
+                    </info>
+
+                    <description>
+                        <h3>${prototype.name}</h3>
+                        <text>
+                            ${prototype.description}
+                        </text>
+                            ${prototype.platforms.includes('mobile') ? '<tag>touch</tag>' : ''}
+                            ${prototype.platforms.includes('keyboard') ? '<tag>keyboard</tag>' : ''}
+                            ${prototype.platforms.includes('mouse') ? '<tag>mouse</tag>' : ''}
+                            ${prototype.platforms.includes('gamepad') ? '<tag>gamepad</tag>' : ''}
+                        <links>
+                            <a href="${prototypeRootFolder}/${prototype.folder}" target="_blank"> abrir </a>
+                            ${prototype.hasDescriptionPage ? '<anchor path="${prototypeRootFolder}/${prototype.folder}detalhes/" transitionStart="right"> detalhes</anchor>' : ''}
+                        </links>
+                    </description>
+                </prototype>
+                ${(i != data.length - 1) ? '<separator></separator>' : ''}`
+
+            // add prototype to list
+            $('main content')[0].appendChild(utils.createHTMLFragment(component))
+            $('main')[0].scrollTop = 1
+
+        })
+
+    }
+
+</script>

@@ -1,0 +1,155 @@
+@import url("https://fonts.googleapis.com/css?family=Lobster|VT323");
+a {
+  color: var(--secondary);
+  border-radius: 3px;
+  padding: 0px 8px;
+}
+
+/**** HEADER ********************************************* */
+
+header {
+  height: 64px;
+  transition: background-color 0.3s;
+  padding-left: env(safe-area-inset-left);
+  padding-right: env(safe-area-inset-right);
+}
+
+header #back {
+  z-index: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 50px;
+  height: 50px;
+  font-size: 20px;
+  position: absolute;
+  left: -10px;
+  padding-right: 30px;
+}
+
+header logo {
+  width: 64px;
+  height: 64px;
+  background: url(../img/logo/logo-aberto.svg) no-repeat -64px center;
+}
+
+header name {
+  flex: 1;
+  font-size: 24px;
+}
+
+/* mobile */
+
+@media (max-width: 500px) {
+  header trigger {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 50px;
+    height: 50px;
+    font-size: 30px;
+  }
+  header menu {
+    display: none;
+  }
+}
+
+/* mobile */
+
+/* */
+
+/* */
+
+/* */
+
+@media (min-width: 500px) {
+  header trigger {
+    display: none;
+  }
+  header menu {
+    display: flex;
+  }
+  header ul {
+    list-style: none;
+    display: flex;
+    align-items: center;
+    justify-items: center;
+  }
+  header ul li {
+    margin: 0px 5px;
+  }
+  header ul li anchor {
+    padding: 10px 15px;
+  }
+  header ul li anchor.active {
+    border-bottom: 2px solid var(--accent);
+  }
+}
+
+/**** HEADER ********************************************* */
+
+/* */
+
+/* */
+
+/* */
+
+/* */
+
+/* */
+
+/**** DRAWER ********************************************* */
+
+drawer {
+  padding: 0px;
+}
+
+drawer ul li {
+  display: flex;
+}
+
+drawer ul separator {
+  display: block;
+  width: 90%;
+  height: 1px;
+  margin-left: 10%;
+  background-color: rgba(0, 0, 0, 0.05);
+}
+
+drawer ul li anchor {
+  display: block;
+  width: 100%;
+  padding: 12px;
+  padding-left: max(12px, env(safe-area-inset-left));
+  padding-right: env(safe-area-inset-right);
+  margin: 1px 0px;
+}
+
+drawer ul li anchor.active {
+  background-color: rgba(0, 0, 0, 0.03);
+}
+
+/**** DRAWER ********************************************* */
+
+hint {
+  background-color: rgba(0, 0, 0, 0.05);
+  padding: 15px;
+  margin: 20px 0px;
+  border-radius: 3px;
+}
+
+content {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding-left: max(10px, env(safe-area-inset-left));
+  padding-right: max(10px, env(safe-area-inset-right));
+}
+
+h2 {
+  font-family: "Lobster";
+}
+
+content .thumb {
+  border: 2px solid white;
+  box-shadow: 0.5px 0.5px 0px 1px rgba(0, 0, 0, 0.1);
+}

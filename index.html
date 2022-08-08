@@ -4,33 +4,120 @@
 <head>
 
     <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <link rel="stylesheet" href="./style/style.css">
+    <!-- web app -->
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="viewport"
+        content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, viewport-fit=cover">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
 
-    <title>Bruno Andrade</title>
+    <!-- favicon -->
+    <link rel="apple-touch-icon" sizes="64x64" href="favicon.png">
+    <link rel="icon" type="image/png" sizes="64x64" href="favicon.png">
+
+    <!-- apper script -->
+    <script src="../apper/apper.js"></script>
+
+    <!-- app style -->
+    <link rel="stylesheet" href="./css/app.css">
+    <!-- app script -->
+    <script src="./js/app.js"></script>
+
+    <title> App </title>
+
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-73357351-2"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag() { dataLayer.push(arguments); }
+        gtag('js', new Date());
+
+        gtag('config', 'UA-73357351-2');
+    </script>
 
 </head>
 
 <body>
-    <div class="app">
 
-        <div class="box">Testando github pages
-            <div class="box-count" />
-        </div>
+    <app>
 
-    </div>
+
+
+
+
+
+        <!-- header -->
+        <header>
+
+            <anchor id="back" path="back" context="!sobre"> ❮ </anchor>
+
+            <logo></logo>
+
+            <name>A Cobaia</name>
+
+            <trigger> ≡ </trigger>
+
+            <menu>
+                <ul>
+                    <li>
+                        <anchor path="sobre.html">Sobre</anchor>
+                    </li>
+                    <li>
+                        <anchor path="prototipos.html">Protótipos</anchor>
+                    </li>
+                    <li>
+                        <anchor path="contato.html">Contato</anchor>
+                    </li>
+                </ul>
+            </menu>
+
+        </header>
+        <!-- /header -->
+
+
+
+
+
+
+
+
+
+        <!-- drawer -->
+        <drawer trigger="trigger">
+            <ul>
+                <li>
+                    <anchor start path="sobre.html" transitionStart="right">Sobre</anchor>
+                </li>
+                <separator></separator>
+                <li>
+                    <anchor path="prototipos.html" transitionStart='right'>Protótipos</anchor>
+                </li>
+                <separator></separator>
+                <li>
+                    <anchor path="contato.html" transitionStart='right'>Contato</anchor>
+                </li>
+            </ul>
+        </drawer>
+        <!-- /drawer -->
+
+
+
+
+
+
+
+
+
+        <!-- main -->
+        <main>
+            <content>
+
+            </content>
+        </main>
+        <!-- /main -->
+
+    </app>
+
 </body>
-
-<script>
-
-    const countElement = document.querySelector('.box .box-count')
-
-    setInterval(() => {
-        countElement.textContent = window.performance.now() | 0
-    }, 100)
-
-</script>
 
 </html>

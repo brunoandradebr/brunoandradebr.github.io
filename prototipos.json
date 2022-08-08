@@ -1,0 +1,82 @@
+[
+    {
+        "name": "Pong",
+        "folder": "2/",
+        "description": "Clone do clássico game da Atari criado por <a href=\"https://pt.wikipedia.org/wiki/Nolan_Bushnell\" target=\"_blank\"> Nolan Bushnell</a> e <a href=\"https://pt.wikipedia.org/wiki/Ted_Dabney\" target=\"_blank\">Ted Dabney</a>",
+        "platforms": [
+            "mobile",
+            "mouse"
+        ]
+    },
+    {
+        "name": "Planarity",
+        "folder": "1/",
+        "description": "Um protótipo baseado no famoso game em flash feito por <b>John Tantalo</b>",
+        "platforms": [
+            "mobile",
+            "mouse"
+        ]
+    },
+    {
+        "name": "Cloth Simulation",
+        "folder": "4/",
+        "description": "Simulação de tecido. Usando <a href='https://en.wikipedia.org/wiki/Semi-implicit_Euler_method' target='_blank'>integração de Euler</a> com apenas uma iteração no solver das constraints",
+        "platforms": [
+            "mobile",
+            "mouse"
+        ]
+    },
+    {
+        "name": "Flappy Bird",
+        "folder": "5/",
+        "description": "Clone da mecânica do clássico <a href='https://pt.wikipedia.org/wiki/Flappy_Bird' target='_blank'>flappy bird</a> desenvolvido pelo vietnamita <a href='https://pt.wikipedia.org/wiki/Dong_Nguyen' target='_blank'>Dong Nguyen</a>",
+        "platforms": [
+            "mobile",
+            "mouse"
+        ]
+    },
+    {
+        "name": "Fruit Ninja",
+        "folder": "6/",
+        "description": "Estudo da mecânica core do jogo <a href='https://en.wikipedia.org/wiki/Fruit_Ninja' target='_blank'>fruit ninja</a> desenvolvido pela <a href='https://en.wikipedia.org/wiki/Halfbrick_Studios' target='_blank'>Halfbrick Studios Pty Ltd</a>",
+        "platforms": [
+            "mobile",
+            "mouse"
+        ]
+    },
+    {
+        "name": "Chaikin Curve",
+        "folder": "7/",
+        "description": "Implementação do <a href='http://www.idav.ucdavis.edu/education/CAGDNotes/Chaikins-Algorithm/Chaikins-Algorithm.html' target='_blank'>algoritmo</a> do matemático <a href='http://timeline.1904.cc/George+Chaikin.html' target='_blank'>George Chaikin</a> criado em 1974 para criação de curvas a partir de pontos de controle",
+        "platforms": [
+            "mobile",
+            "mouse"
+        ]
+    },
+    {
+        "name": "Asteroids",
+        "folder": "3/",
+        "description": "Clone do clássico dos arcades criado por <a href=\"https://en.wikipedia.org/wiki/Ed_Logg\" target=\"_blank\"> Ed Logg</a> e <a href=\"https://en.wikipedia.org/wiki/Lyle_Rains\" target=\"_blank\">Lyle Rains</a>",
+        "platforms": [
+            "mobile",
+            "mouse"
+        ]
+    },
+    {
+        "name": "A* Pathfinding",
+        "folder": "8/",
+        "description": "Algoritmo que acha o caminho mais curto entre dois nós num grafo. Criado em 1968 por <a href=\"https://en.wikipedia.org/wiki/Peter_E._Hart\" target=\"_blank\"> Peter Hart</a>, <a href=\"https://en.wikipedia.org/wiki/Nils_John_Nilsson\" target=\"_blank\"> Nils Nilsson</a> e <a href=\"https://en.wikipedia.org/wiki/Bertram_Raphael\" target=\"_blank\"> Bertram Raphael</a>. Foi uma extensão do algoritmo de <a href=\"https://pt.wikipedia.org/wiki/Edsger_Dijkstra\" target=\"_blank\">Edsger Dijkstra</a> criado em 1956.",
+        "platforms": [
+            "mobile",
+            "mouse"
+        ]
+    },
+    {
+        "name": "Raycasting Render",
+        "folder": "9/",
+        "description": "Algoritmo de raycasting utilizado para renderizar '3D'. Técnica popularizada por <a href=\"https://pt.wikipedia.org/wiki/John_Carmack\">John Carmack</a> no clássico <a href=\"https://pt.wikipedia.org/wiki/Wolfenstein_3D\">Wolfenstein 3D</a> de 1992.",
+        "platforms": [
+            "mouse"
+        ]
+    }
+]
