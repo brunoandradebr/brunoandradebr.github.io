@@ -1,0 +1,39 @@
+:root,
+html[data-theme='light'] {
+  --background: #f8f8f8;
+  --foreground: #f0f0f0;
+  --foreground-hover: #fff;
+  --header-border: #000;
+  --primary: #222;
+  --text-base: #333;
+  --text-accent: #000;
+}
+
+html[data-theme='dark'] {
+  --background: #16171b;
+  --foreground: #0a0a0a;
+  --foreground-hover: #171717;
+  --header-border: #555;
+  --primary: #f8ce46;
+  --text-base: #a3a3a3;
+  --text-accent: #fff;
+}
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+body {
+  @apply text-base bg-background text-2xl transition-colors duration-700;
+}
+
+::-webkit-scrollbar {
+  width: 8px;
+}
+::-webkit-scrollbar-track {
+  @apply bg-foreground;
+}
+::-webkit-scrollbar-thumb {
+  @apply bg-neutral-700;
+  border-radius: 5px;
+}
