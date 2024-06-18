@@ -1,3 +1,5 @@
+import { useThemeStore } from 'storage/theme'
+
 interface IExperiment {
   title: string
   description: string
@@ -78,9 +80,27 @@ const experiments: IExperiment[] = [
 ]
 
 export const Experiments = () => {
+  const { theme } = useThemeStore()
+
   return (
     <>
       <div className="flex flex-col text-primary font-medium text-3xl">Experiments</div>
+      <div className="text-base text-nowrap">
+        all experiments are made with
+        <a
+          className="px-2 py-1 ml-1 rounded-xl text-sm bg-foreground"
+          href="https://github.com/brunoandradebr/EmagJS"
+          target="_blank"
+        >
+          EmagJS
+          <img
+            className={`ml-1 -mt-[12px] inline w-[12px] h-[12px] ${
+              theme === 'dark' && 'invert'
+            }`}
+            src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAoAAAAKCAYAAACNMs+9AAAAQElEQVR42qXKwQkAIAxDUUdxtO6/RBQkQZvSi8I/pL4BoGw/XPkh4XigPmsUgh0626AjRsgxHTkUThsG2T/sIlzdTsp52kSS1wAAAABJRU5ErkJggg=="
+          />
+        </a>
+      </div>
 
       <div className="flex flex-row flex-wrap gap-5 mt-10">
         {experiments.map(experiment => (
