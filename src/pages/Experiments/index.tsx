@@ -1,86 +1,83 @@
-import { useThemeStore } from 'storage/theme'
+import { useThemeStore } from "storage/theme";
 
 interface IExperiment {
-  title: string
-  description: string
-  img: string
-  platform: string[]
-  link: string
+  title: string;
+  description: string;
+  img: string;
+  platform: string[];
+  link: string;
 }
 
 const experiments: IExperiment[] = [
   {
-    title: 'Flappy Bird',
-    description:
-      'Clone da mecânica do clássico flappy bird desenvolvido pelo vietnamita Dong Nguyen',
-    img: 'https://www.acobaia.com.br/prototipos/5/thumb.png',
-    platform: ['mouse', 'touch'],
-    link: 'https://brunoandradebr.github.io/EmagJS/Demos/5/',
+    title: "Flappy Bird",
+    description: "Clone da mecânica do clássico flappy bird desenvolvido pelo vietnamita Dong Nguyen",
+    img: "https://acobaia.io/EmagJS/Demos/5/thumb.png",
+    platform: ["mouse", "touch"],
+    link: "https://brunoandradebr.github.io/EmagJS/Demos/5/",
   },
   {
-    title: 'Asteroids',
-    description: 'Clone do clássico dos arcades criado por Ed Logg e Lyle Rains',
-    img: 'https://www.acobaia.com.br/prototipos/3/thumb.png',
-    platform: ['mouse', 'touch'],
-    link: 'https://brunoandradebr.github.io/EmagJS/Demos/3/',
+    title: "Asteroids",
+    description: "Clone do clássico dos arcades criado por Ed Logg e Lyle Rains",
+    img: "https://acobaia.io/EmagJS/Demos/3/thumb.png",
+    platform: ["mouse", "touch"],
+    link: "https://brunoandradebr.github.io/EmagJS/Demos/3/",
   },
   {
-    title: 'Pong',
-    description: 'Clone do clássico game da Atari criado por Nolan Bushnell e Ted Dabney',
-    img: 'https://www.acobaia.com.br/prototipos/2/thumb.png',
-    platform: ['mouse', 'touch'],
-    link: 'https://brunoandradebr.github.io/EmagJS/Demos/2/',
+    title: "Pong",
+    description: "Clone do clássico game da Atari criado por Nolan Bushnell e Ted Dabney",
+    img: "https://acobaia.io/EmagJS/Demos/2/thumb.png",
+    platform: ["mouse", "touch"],
+    link: "https://brunoandradebr.github.io/EmagJS/Demos/2/",
   },
   {
-    title: 'Cloth Simulation',
-    description:
-      'Simulação de tecido. Usando integração de Euler com apenas uma iteração no solver das constraints',
-    img: 'https://www.acobaia.com.br/prototipos/4/thumb.png',
-    platform: ['mouse', 'touch'],
-    link: 'https://brunoandradebr.github.io/EmagJS/Demos/4/',
+    title: "Cloth Simulation",
+    description: "Simulação de tecido. Usando integração de Euler com apenas uma iteração no solver das constraints",
+    img: "https://acobaia.io/EmagJS/Demos/4/thumb.png",
+    platform: ["mouse", "touch"],
+    link: "https://brunoandradebr.github.io/EmagJS/Demos/4/",
   },
   {
-    title: 'Fruit Ninja',
-    description:
-      'Estudo da mecânica core do jogo fruit ninja desenvolvido pela Halfbrick Studios Pty Ltd',
-    img: 'https://www.acobaia.com.br/prototipos/6/thumb.png',
-    platform: ['mouse', 'touch'],
-    link: 'https://brunoandradebr.github.io/EmagJS/Demos/6/',
+    title: "Fruit Ninja",
+    description: "Estudo da mecânica core do jogo fruit ninja desenvolvido pela Halfbrick Studios Pty Ltd",
+    img: "https://acobaia.io/EmagJS/Demos/6/thumb.png",
+    platform: ["mouse", "touch"],
+    link: "https://brunoandradebr.github.io/EmagJS/Demos/6/",
   },
   {
-    title: 'Raycasting Render',
+    title: "Raycasting Render",
     description: `Algoritmo de raycasting utilizado para renderizar "3D". Técnica popularizada por John Carmack no clássico Wolfenstein 3D de 1992.`,
-    img: 'https://www.acobaia.com.br/prototipos/9/thumb.png',
-    platform: ['mouse'],
-    link: 'https://brunoandradebr.github.io/EmagJS/Demos/9/',
+    img: "https://acobaia.io/EmagJS/Demos/9/thumb.png",
+    platform: ["mouse"],
+    link: "https://brunoandradebr.github.io/EmagJS/Demos/9/",
   },
   {
-    title: 'A* Pathfinding',
+    title: "A* Pathfinding",
     description:
-      'Algoritmo que acha o caminho mais curto entre dois nós num grafo. Criado em 1968 por Peter Hart, Nils Nilsson e Bertram Raphael. Foi uma extensão do algoritmo de Edsger Dijkstra criado em 1956.',
-    img: 'https://www.acobaia.com.br/prototipos/8/thumb.png',
-    platform: ['mouse', 'touch'],
-    link: 'https://brunoandradebr.github.io/EmagJS/Demos/8/',
+      "Algoritmo que acha o caminho mais curto entre dois nós num grafo. Criado em 1968 por Peter Hart, Nils Nilsson e Bertram Raphael. Foi uma extensão do algoritmo de Edsger Dijkstra criado em 1956.",
+    img: "https://acobaia.io/EmagJS/Demos/8/thumb.png",
+    platform: ["mouse", "touch"],
+    link: "https://brunoandradebr.github.io/EmagJS/Demos/8/",
   },
   {
-    title: 'Chaikin Curve',
+    title: "Chaikin Curve",
     description:
-      'Implementação do algoritmo do matemático George Chaikin criado em 1974 para criação de curvas a partir de pontos de controle',
-    img: 'https://www.acobaia.com.br/prototipos/7/thumb.png',
-    platform: ['mouse', 'touch'],
-    link: 'https://brunoandradebr.github.io/EmagJS/Demos/7/',
+      "Implementação do algoritmo do matemático George Chaikin criado em 1974 para criação de curvas a partir de pontos de controle",
+    img: "https://acobaia.io/EmagJS/Demos/7/thumb.png",
+    platform: ["mouse", "touch"],
+    link: "https://brunoandradebr.github.io/EmagJS/Demos/7/",
   },
   {
-    title: 'Planarity',
-    description: 'Um protótipo baseado no famoso game em flash feito por John Tantalo',
-    img: 'https://www.acobaia.com.br/prototipos/1/thumb.png',
-    platform: ['mouse', 'touch'],
-    link: 'https://brunoandradebr.github.io/EmagJS/Demos/1/',
+    title: "Planarity",
+    description: "Um protótipo baseado no famoso game em flash feito por John Tantalo",
+    img: "https://acobaia.io/EmagJS/Demos/1/thumb.png",
+    platform: ["mouse", "touch"],
+    link: "https://brunoandradebr.github.io/EmagJS/Demos/1/",
   },
-]
+];
 
 export const Experiments = () => {
-  const { theme } = useThemeStore()
+  const { theme } = useThemeStore();
 
   return (
     <>
@@ -94,16 +91,14 @@ export const Experiments = () => {
         >
           EmagJS
           <img
-            className={`ml-1 -mt-[12px] inline w-[12px] h-[12px] ${
-              theme === 'dark' && 'invert'
-            }`}
+            className={`ml-1 -mt-[12px] inline w-[12px] h-[12px] ${theme === "dark" && "invert"}`}
             src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAoAAAAKCAYAAACNMs+9AAAAQElEQVR42qXKwQkAIAxDUUdxtO6/RBQkQZvSi8I/pL4BoGw/XPkh4XigPmsUgh0626AjRsgxHTkUThsG2T/sIlzdTsp52kSS1wAAAABJRU5ErkJggg=="
           />
         </a>
       </div>
 
       <div className="flex flex-row flex-wrap gap-5 mt-10">
-        {experiments.map(experiment => (
+        {experiments.map((experiment) => (
           <a
             key={experiment.title}
             href={experiment.link}
@@ -122,10 +117,7 @@ export const Experiments = () => {
 
               <div className="flex items-end h-full gap-1 font-medium text-xs mt-5">
                 {experiment.platform.map((platform, platformKey) => (
-                  <div
-                    key={platformKey}
-                    className="rounded-md px-2 py-1 border border-neutral-700"
-                  >
+                  <div key={platformKey} className="rounded-md px-2 py-1 border border-neutral-700">
                     {platform}
                   </div>
                 ))}
@@ -135,5 +127,5 @@ export const Experiments = () => {
         ))}
       </div>
     </>
-  )
-}
+  );
+};
