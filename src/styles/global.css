@@ -23,6 +23,12 @@ html[data-theme='dark'] {
 @tailwind components;
 @tailwind utilities;
 
+@layer base {
+  html {
+    font-family: "Nunito", system-ui, sans-serif;
+  }
+}
+
 body {
   @apply text-base bg-background text-2xl transition-colors duration-700;
 }
